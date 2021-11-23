@@ -8,18 +8,18 @@
 		<version>2.6.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.soil-corrections</groupId>
-	<artifactId>SoilCorrectionAPI</artifactId>
+	<groupId>edu.utfpr.cp.dacom.sa</groupId>
+	<artifactId>soilcorrectionapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SoilCorrectionAPI</name>
-	<description>API para conexão do projeto SoilCorrections</description>
+	<name>soilcorrectionapi</name>
+	<description>API para conexão do projeto soil-correction</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>

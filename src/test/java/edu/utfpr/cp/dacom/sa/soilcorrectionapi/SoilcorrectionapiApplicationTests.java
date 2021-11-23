@@ -1,10 +1,10 @@
-package com.soilcorrections.SoilCorrectionAPI;
+package edu.utfpr.cp.dacom.sa.soilcorrectionapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SoilCorrectionApiApplicationTests {
+class SoilcorrectionapiApplicationTests {
 
 	@Test
 	void contextLoads() {
