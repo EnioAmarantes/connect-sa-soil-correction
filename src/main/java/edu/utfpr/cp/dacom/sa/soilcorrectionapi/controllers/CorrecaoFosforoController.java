@@ -20,7 +20,6 @@ public class CorrecaoFosforoController {
     public ResultadoCorrecaoFosforo equilibrioCorrecao(@RequestBody DadosCorrecaoFosforo dadosCorrecaoFosforo){
     	
     	CorrecaoFosforo correcaoFosforo = new CorrecaoFosforo();
-    	System.out.println(dadosCorrecaoFosforo.getTeor());
     	
     	var teorFosforoAdicionarKgHa = new ConverteMgDm3EmKgHa().converte(dadosCorrecaoFosforo.getTeor());
     	var teorFosforoAdicionarP2O5 = new ConverteKgHaEmP2O5().converte(teorFosforoAdicionarKgHa);
@@ -39,7 +38,6 @@ public class CorrecaoFosforoController {
     @CrossOrigin
     @GetMapping("/")
     public String Hello() {
-    	System.out.println("Solicitado GetHello");
     	return "Funcionando";
     }
 }
