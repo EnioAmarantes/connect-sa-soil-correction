@@ -10,7 +10,7 @@ import edu.utfpr.cp.dacom.sa.soilcorrectionapi.models.DadosCorrecaoFosforo;
 import edu.utfpr.cp.dacom.sa.soilcorrectionapi.models.ResultadoCorrecaoFosforo;
 import edu.utfpr.cp.dacom.sa.soilcorrectionapi.soilcorrection.conversao.ConverteKgHaEmP2O5;
 import edu.utfpr.cp.dacom.sa.soilcorrectionapi.soilcorrection.conversao.ConverteMgDm3EmKgHa;
-import edu.utfpr.cp.dacom.sa.soilcorrectionapi.soilcorrection.correcoes.fosforo.CorrecaoFosforo;
+import edu.utfpr.cp.dacom.sa.soilcorrectionapi.soilcorrection.correcoes.CorrecaoFosforo;
 
 @RestController
 public class CorrecaoFosforoController {

@@ -1,4 +1,4 @@
-package edu.utfpr.cp.dacom.sa.soilcorrectionapi.soilcorrection.correcoes.calciomagnesio;
+package edu.utfpr.cp.dacom.sa.soilcorrectionapi.soilcorrection.correcoes;
 
 import edu.utfpr.cp.dacom.sa.soilcorrectionapi.soilcorrection.fontenutrientes.FonteCalcioMagnesio;
 import edu.utfpr.cp.dacom.sa.soilcorrectionapi.soilcorrection.shared.ICorrecaoNutriente;
