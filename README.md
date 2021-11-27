@@ -12,3 +12,22 @@ Para a API está sendo inicializada uma arquitetura onde é separado a controlle
 Para rodar esta aplicação basta seguir os comandos abaixo:
 
 >mvnw spring-boot:run
+
+Para testar a API basta fazer uma requisição GET para o endereço raiz, deverá receber a resposta:
+
+>A API SoilCorrectionAPI está funcionando e pronta para comunicar os dados.
+
+Para Receber os dados calculados de Fósforo basta fazer uma requisição do tipo POST para o endereço da API + /correcaofosforo
+
+Será necessário enviar um objeto com as seguintes caracteristicas pelo body:
+>   double teor;
+>    FonteFosforo fonteFosforo;
+>	double custoFonte;
+>	double eficiencia;
+>	
+
+Será devolvido então um resultado com os seguintes campos:
+
+>	double qtdAplicar;
+>	double custoHa;
+>	Set<NutrienteAdicional> nutrientesAdicionais;

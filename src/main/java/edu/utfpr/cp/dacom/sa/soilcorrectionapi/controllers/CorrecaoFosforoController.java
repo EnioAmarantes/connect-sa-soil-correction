@@ -35,9 +35,4 @@ public class CorrecaoFosforoController {
         return new ResultadoCorrecaoFosforo(qtdAplicar, custoHa, nutrientesAdicionais);
     }
     
-    @CrossOrigin
-    @GetMapping("/")
-    public String Hello() {
-    	return "Funcionando";
-    }
 }
