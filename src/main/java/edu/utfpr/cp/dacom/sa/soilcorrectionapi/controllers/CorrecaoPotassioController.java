@@ -26,17 +26,18 @@ public class CorrecaoPotassioController {
 		CorrecaoPotassio correcaoPotassio = new CorrecaoPotassio();
 		
 		var necessidadeCMolcDM3 = correcaoPotassio.calculaNecessidadeAdicionarCMolcDm3(
-				dadosCorrecaoPotassio.getTeorSolo(),
+				dadosCorrecaoPotassio.getTeor(),
 				dadosCorrecaoPotassio.getParticipacaoAtual(), 
 				dadosCorrecaoPotassio.getParticipacaoDesejada());
 		
         var teorPotassioMgDM3 = new ConverteCMolcDm3EmMgDm3().converte(necessidadeCMolcDM3); 
         var teorPotassioKgHa = new ConverteMgDm3EmKgHa().converte(teorPotassioMgDM3);  
-        var teorPotassioK20 = new ConverteKgHaEmK2O().converte(teorPotassioKgHa);   
+        var teorPotassioK20 = new ConverteKgHaEmK2O().converte(teorPotassioKgHa);
         var eficienciaNutriente = correcaoPotassio.calculaEficienciaNutriente(teorPotassioK20, 0.85);
  
         var qtdAplicar = correcaoPotassio.calculaQuantidadeAplicar(eficienciaNutriente,
                 dadosCorrecaoPotassio.getFontePotassio());
+        
         var custoHa = correcaoPotassio.calculaCusto(qtdAplicar, dadosCorrecaoPotassio.getCustoFonte());
         var nutrientesAdicionais = correcaoPotassio.getNutrientesAdicionais(
                 qtdAplicar,

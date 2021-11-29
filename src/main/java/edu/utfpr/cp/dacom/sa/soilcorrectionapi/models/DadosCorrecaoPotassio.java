@@ -14,13 +14,13 @@ public class DadosCorrecaoPotassio {
 	@Getter
     private final double custoFonte;
 	@Getter
-    private final double teorSolo;
+    private final double teor;
 
-    public DadosCorrecaoPotassio(double participacaoAtual, double participacaoDesejada, FontePotassio fontePotassio, double custoFonte, double teorSolo) {
+    public DadosCorrecaoPotassio(double participacaoAtual, double participacaoDesejada, FontePotassio fontePotassio, double custoFonte, double teor) {
         this.participacaoAtual = participacaoAtual;
         this.participacaoDesejada = participacaoDesejada;
         this.fontePotassio = fontePotassio;
         this.custoFonte = custoFonte;
-        this.teorSolo = teorSolo;
+        this.teor = teor;
     }
 }

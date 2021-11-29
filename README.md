@@ -13,10 +13,14 @@ Para rodar esta aplicação basta seguir os comandos abaixo:
 
 >mvnw spring-boot:run
 
+
+## TestarAPI
 Para testar a API basta fazer uma requisição GET para o endereço raiz, deverá receber a resposta:
 
 >A API SoilCorrectionAPI está funcionando e pronta para comunicar os dados.
 
+
+## Fósforo
 Para Receber os dados calculados de Fósforo basta fazer uma requisição do tipo POST para o endereço da API + /correcaofosforo
 
 Será necessário enviar um objeto com as seguintes caracteristicas pelo body:
@@ -24,7 +28,41 @@ Será necessário enviar um objeto com as seguintes caracteristicas pelo body:
 >    FonteFosforo fonteFosforo;
 >	double custoFonte;
 >	double eficiencia;
->	
+
+Será devolvido então um resultado com os seguintes campos:
+
+>	double qtdAplicar;
+>	double custoHa;
+>	Set<NutrienteAdicional> nutrientesAdicionais;
+
+
+## Potássio
+Para Receber os dados calculados de Potássio basta fazer uma requisição do tipo POST para o endereço da API + /correcaopotassio
+
+Será necessário enviar um objeto com as seguintes caracteristicas pelo body:
+>   double teor;
+>   FontePotassio fontePotassio;
+>	double custoFonte;
+>	double eficiencia;
+
+Será devolvido então um resultado com os seguintes campos:
+
+>	double qtdAplicar;
+>	double custoHa;
+>	Set<NutrienteAdicional> nutrientesAdicionais;
+
+
+## Cálcio/Magnésio
+Para Receber os dados calculados de Cálcio/Magnésio basta fazer uma requisição do tipo POST para o endereço da API + /correcaocalciomagnesio
+
+Será necessário enviar um objeto com as seguintes caracteristicas pelo body:
+>   double participacaoAtual;
+>	double participacaoDesejada;
+>   FonteCalcioMagnesio fonteCalcioMagnesio;
+>   double custoFonte;
+>   double prnt;
+>   double teorCao;
+>   double teorSolo;
 
 Será devolvido então um resultado com os seguintes campos:
 
