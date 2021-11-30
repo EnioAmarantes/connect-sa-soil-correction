@@ -24,15 +24,20 @@ Para testar a API basta fazer uma requisição GET para o endereço raiz, dever�
 Para Receber os dados calculados de Fósforo basta fazer uma requisição do tipo POST para o endereço da API + /correcaofosforo
 
 Será necessário enviar um objeto com as seguintes caracteristicas pelo body:
->   double teor;
->    FonteFosforo fonteFosforo;
+> double teor;
+> 
+> FonteFosforo fonteFosforo;
+> 
 >	double custoFonte;
+>	
 >	double eficiencia;
 
 Será devolvido então um resultado com os seguintes campos:
 
 >	double qtdAplicar;
+>	
 >	double custoHa;
+>	
 >	Set<NutrienteAdicional> nutrientesAdicionais;
 
 
@@ -40,15 +45,20 @@ Será devolvido então um resultado com os seguintes campos:
 Para Receber os dados calculados de Potássio basta fazer uma requisição do tipo POST para o endereço da API + /correcaopotassio
 
 Será necessário enviar um objeto com as seguintes caracteristicas pelo body:
->   double teor;
->   FontePotassio fontePotassio;
+> double teor;
+>
+> FontePotassio fontePotassio;
+>
 >	double custoFonte;
+>
 >	double eficiencia;
 
 Será devolvido então um resultado com os seguintes campos:
 
 >	double qtdAplicar;
+>
 >	double custoHa;
+>
 >	Set<NutrienteAdicional> nutrientesAdicionais;
 
 
@@ -56,16 +66,39 @@ Será devolvido então um resultado com os seguintes campos:
 Para Receber os dados calculados de Cálcio/Magnésio basta fazer uma requisição do tipo POST para o endereço da API + /correcaocalciomagnesio
 
 Será necessário enviar um objeto com as seguintes caracteristicas pelo body:
->   double participacaoAtual;
+> double participacaoAtual;
+>
 >	double participacaoDesejada;
->   FonteCalcioMagnesio fonteCalcioMagnesio;
->   double custoFonte;
->   double prnt;
->   double teorCao;
->   double teorSolo;
+>
+> FonteCalcioMagnesio fonteCalcioMagnesio;
+>
+> double custoFonte;
+>
+> double prnt;
+>
+> double teorCao;
+>
+> double teorSolo;
 
 Será devolvido então um resultado com os seguintes campos:
 
 >	double qtdAplicar;
+>
 >	double custoHa;
+>
 >	Set<NutrienteAdicional> nutrientesAdicionais;
+  
+## Algumas considerações sobre a Arquitetura
+
+Quando utilizado cada tipo de dado em uma controller separada obtemos uma consulta que em testes levaram 396 ms em média
+![image](https://user-images.githubusercontent.com/37565576/144040234-0ea8e486-1e05-48ba-9e2f-da4990642219.png)
+
+Quando se utiliza apenas uma controller repassando a rota esse tempo caiu em testes para 278 ms em média
+![image](https://user-images.githubusercontent.com/37565576/144040339-b9bde82b-5ec8-47f5-94fd-bbcc5b3f1ad6.png)
+
+A utilização de herança para os dados de correção e uma única classe de Resultado genérica para retorno reduziu ainda mais a média de tempo nos testes, chegando a 6 ms
+![image](https://user-images.githubusercontent.com/37565576/144040453-d70fada7-2c39-4cdd-8c58-32aeada4492e.png)
+  
+*Estes testes foram realizados em localhost tanto api quanto a requisição, portanto utilizando redes externas esses valores podem ser alterados*
+  
+Concluímos que uma centralização das controllers e utilização do recurso de herança e reaproveitamento da classe Resultado levam um ganho significativo de performance para a API, porém vale ressaltar que esta API possui uma gama de 3 tipos de dados que podem ser requisitados o que relativamente não dificulta a manutenção, caso essa quantidade aumente pode significar um aumento da complexidade de manutenção o que se fará necessário repensar a estratégia de separação das classes de controllers e um controle de rotas.
