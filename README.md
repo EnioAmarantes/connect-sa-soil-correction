@@ -99,6 +99,7 @@ Quando se utiliza apenas uma controller repassando a rota esse tempo caiu em tes
 A utilização de herança para os dados de correção e uma única classe de Resultado genérica para retorno reduziu ainda mais a média de tempo nos testes, chegando a 6 ms
 ![image](https://user-images.githubusercontent.com/37565576/144040453-d70fada7-2c39-4cdd-8c58-32aeada4492e.png)
   
-*Estes testes foram realizados em localhost tanto api quanto a requisição, portanto utilizando redes externas esses valores podem ser alterados*
-  
+**Estes testes foram realizados em localhost tanto api quanto a requisição, portanto utilizando redes externas esses valores podem ser alterados**
+ 
+## Conclusão
 Concluímos que uma centralização das controllers e utilização do recurso de herança e reaproveitamento da classe Resultado levam um ganho significativo de performance para a API, porém vale ressaltar que esta API possui uma gama de 3 tipos de dados que podem ser requisitados o que relativamente não dificulta a manutenção, caso essa quantidade aumente pode significar um aumento da complexidade de manutenção o que se fará necessário repensar a estratégia de separação das classes de controllers e um controle de rotas.
