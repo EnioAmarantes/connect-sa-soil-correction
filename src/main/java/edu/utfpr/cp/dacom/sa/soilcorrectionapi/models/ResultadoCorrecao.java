@@ -5,7 +5,7 @@ import java.util.Set;
 import edu.utfpr.cp.dacom.sa.soilcorrectionapi.soilcorrection.fontenutrientes.NutrienteAdicional;
 import lombok.Getter;
 
-public class ResultadoCorrecaoCalcioMagnesio {
+public class ResultadoCorrecao {
 	@Getter
     private final double qtdAplicar;
 	@Getter
@@ -13,7 +13,7 @@ public class ResultadoCorrecaoCalcioMagnesio {
 	@Getter
     private final Set<NutrienteAdicional> nutrientesAdicionais;
 
-    public ResultadoCorrecaoCalcioMagnesio(double qtdAplicar, double custoHa, Set<NutrienteAdicional> nutrientesAdicionais) {
+    public ResultadoCorrecao(double qtdAplicar, double custoHa, Set<NutrienteAdicional> nutrientesAdicionais) {
         this.qtdAplicar = qtdAplicar;
         this.custoHa = custoHa;
         this.nutrientesAdicionais = nutrientesAdicionais;
